@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de models no Django</title>
+</head>
+<body>
+    <h1>Ola eu sou o Mario e Aqui embaixo estão os livros que eu tenho</h1>
+    
+    {% for c in livros %}
+
+        <p>Título: {{c.titulo}}</p>
+        <p>Autor: {{c.autor}}</p>
+        <p>Ano de publicação: {{c.ano_publicacao}}</p>
+
+    {% endfor %}    
+
+    
+</body>
+</html>

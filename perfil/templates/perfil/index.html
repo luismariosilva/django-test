@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 1</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            background-color: #0A68FF;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        main {
+            h3 {
+                text-align: center;
+            }
+            fieldset {
+                width: 40%;
+                border-radius: 15px;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            img {
+                width: 300px;
+                display: block;
+                margin: 20px auto;
+                border: 3px solid white;
+                border-radius: 10px;
+            }
+
+
+        }
+
+        footer {
+            color: black;
+            text-align: center;
+        }
+
+       
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Seja bem vindo ao meu site</h2>
+    </header>
+
+    <main>
+        <h3>As minhas informações pessoais estão aqui 👇</h3>
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <p>Nome: {{nome}}</p>
+            <p>Idade: {{idade}}</p>
+            <p>Cidade: {{cidade}}</p>
+            <p>Hobby: {{hobby}}</p>
+        </fieldset>
+        <hr>
+
+        <h2>Aqui esta uma imagem de como eu sou mais ou menos 🙋🏻‍♂️</h2>
+        <img src="https://acadtec.com.br/tenancy/image//storage/posts/pictures/ntVKoNURQUQhP9ghaf06607dcbf590338.jpg" alt="imagem">
+
+        <p> Listas das coisas que eu estou aprendendo em Programação 👨🏻‍💻</p>
+        
+        <ul>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>HTML-CSS</li>
+            <li>Django</li>
+        </ul>
+    
+
+        {% if hobby %}
+            <p>O meu Hobby e: {{hobby}}</p>
+        {% endif %} 
+
+        <p>Para mais informações clica <a href="/index/">Aqui</a></p>
+        <p>Se o primeiro link não funcionar, clique <a href="{% url 'index_page1' %}">Aqui</a></p>
+
+
+        <hr>
+        
+    </main>
+
+    <footer>
+        <h2>Termos e Politicas de Privacidade</h2>
+        <p>Este site utiliza cookies para melhorar a experiência do usuário. Por favor, leia nossa política de privacidade para saber mais sobre o uso de cookies.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nemo molestias error accusamus odit a? Accusamus impedit eaque, ad amet quasi, dolorum corrupti numquam, accusantium error incidunt inventore repudiandae dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quas impedit magnam tempora repudiandae sit accusantium quidem velit nobis repellat aliquid illo perferendis itaque iste earum ducimus aliquam, provident eius?</p>
+
+    </footer>
+
+</body>
+</html>
