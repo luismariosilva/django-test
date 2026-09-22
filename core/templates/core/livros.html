@@ -7,15 +7,34 @@
 </head>
 <body>
     <h1>Ola eu sou o Mario e Aqui embaixo estão os livros que eu tenho</h1>
+
+    <h2>Lista de Livros: </h2>
+    
+    {% for n in livros %}
+        <p>Nome do autor: {{n.autor.nome}}</p>
+        <p>Nacionalidade: {{n.autor.nacionalidade}}</p>
+        <p>Ano de publicação: {{n.ano_publicacao}}</p>
+        <p>Data de nascimento do autor: {{n.autor.data_nascimento}}</p>
+        <p>Genero: {{n.genero}}</p>
+    {% endfor %}
+
+    <h2>Nacionalidades dos autores</h2>
     
     {% for c in livros %}
+        <p>Nacionalidade: {{c.autor.nacionalidade}}</p>
+    {% endfor %}
 
-        <p>Título: {{c.titulo}}</p>
-        <p>Autor: {{c.autor}}</p>
-        <p>Ano de publicação: {{c.ano_publicacao}}</p>
+    <h2>Ano de publicação dos livros</h2>
 
-    {% endfor %}    
+    {% for a in livros %}
+        <p>Ano de publicação: {{a.ano_publicacao}}</p>
+    {% endfor %}
 
+    <h2>Data de nascimento dos autores</h2>
+
+    {% for n in livros %}
+    <p>Data de nascimento do autor: {{n.autor.data_nascimento}}</p> 
+    {% endfor %}
     
 </body>
 </html>
