@@ -18,7 +18,7 @@ class Autor(models.Model):
 class Livro(models.Model):
     titulo = models.CharField(max_length=150)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
-    genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
+    genero = models.ManyToManyField(Genero)
     ano_publicacao = models.IntegerField()
     disponivel = models.BooleanField(default=True)
 
