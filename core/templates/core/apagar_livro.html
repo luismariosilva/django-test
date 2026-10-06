@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apagar Livro</title>
+</head>
+<body> 
+    <h1>Tem certeza que deseja apagar este livro?</h1> 
+    {% for livro in livros %}
+    <p>Título: {{ livro.titulo }}</p>
+    <p>Autor: {{ livro.autor.nome }}</p>
+
+    <a href="{% url 'editar_livro' livro.id %}">Editar</a>
+
+    <form method="post" action="{% url 'apagar_livro' livro.id %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Apagar Livro</button>
+    </form>
+
+    <hr>
+{% endfor %}
+</body>
+</html>

@@ -29,10 +29,28 @@ def adicionar_livro(request):
         form = LivroForm()
     
     return render(request, 'core/adicionar_livro.html', {'form': form})
+
+
+def editar_livro(request, livro_id):
+    livro = Livro.objects.get(id=livro_id)
+    if request.method == 'POST':
+        form = LivroForm(request.POST, instance=livro)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_livros')
+    else:
+        form = LivroForm(instance=livro)
+    
+    return render(request, 'core/adicionar_livro.html', {'form': form})
         
 
 
-
+def apagar_livro(request, livro_id):
+    livro = Livro.objects.get(id=livro_id)
+    if request.method == 'POST':
+        livro.delete()
+        return redirect('lista_livros')
+    return render(request, 'core/apagar_livro.html', {'livro': livro})
 
 
 
