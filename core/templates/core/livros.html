@@ -21,10 +21,21 @@
     <hr>
 
     <button><a href="{% url 'adicionar_livro' %}">Adicionar Livro</a></button>
-    <button><a href="{% url 'apagar_livro' 8 %}">Apagar Livro</a></button>
+    
+    {% for livro in livros %}
+    <p>Título: {{ livro.titulo }}</p>
+    <p>Autor: {{ livro.autor.nome }}</p>
+
+    <a href="{% url 'editar_livro' livro.id %}">Editar</a>
+
+    <form method="post" action="{% url 'apagar_livro' livro.id %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Apagar Livro</button>
+    </form>
+
+    <hr>
+    {% endfor %}
 
     
-    
- 
 </body>
 </html>
